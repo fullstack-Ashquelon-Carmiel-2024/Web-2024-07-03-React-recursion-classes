@@ -4,10 +4,10 @@ import AddUser from './components/addUser/AddUser';
 import Header from './components/header/Header';
 import UserList from './components/userList/UserList';
 
+import UserContext from './contexts/userContext';
 
 function App() {
-  // MISSION: convert "users" into "state" and make
-  // this array to be their initial value
+  
   const [users,setUsers] = useState(
       [
         { id: 77, fullName: 'Harleen Frances Quinzel', nick: 'Harley Quinn',
@@ -20,9 +20,21 @@ function App() {
             email:'gal.gadot@gmail.com', phone: '555-5558', role:'admin'}
       ]);
 
-  // MISSION: create function removeUser(id)
+  const removeUser = (id) => {
+
+    setUsers(users.filter(user => user.id !== id));
+
+  }
+
+  // MISSION:
+  // 1. contexts: Create in contexts dir UserContext
+  // 2. App:Bring it here and create UserContext.Provider
+  // 3. App: Add removeUser to the "value" of the Provider
+  // 4. UserCard: Get it in UserCard
+  // 5. UserCard: Use it onClick on the "delete" button
 
   return (
+    <UserContext.Provider value={{removeUser}}>
     <div className="App container pb-5">
       <div className="appTitle">Bulls and Cows</div>
       <div className="row gx-0 gy-3">
@@ -37,6 +49,7 @@ function App() {
 
       </div>
     </div>
+    </UserContext.Provider>
   );
 }
 

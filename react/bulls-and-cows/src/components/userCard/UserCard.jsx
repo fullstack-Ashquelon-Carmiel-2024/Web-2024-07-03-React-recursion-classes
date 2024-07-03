@@ -5,12 +5,13 @@ import justUserImg from '../../assets/images/user02.png';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-
+import { useContext} from 'react';
+import UserContext from '../../contexts/userContext';
 
 export default function UserCard({user}) {
-    
 
-  const { fullName, email, role } = user;
+    const { fullName, email, role, id } = user;
+    const { removeUser } = useContext(UserContext);
 
   let imgSrc = !user.gender ? justUserImg : user.gender === 'f' 
                             ? femaleImg : maleImg;
@@ -40,6 +41,13 @@ export default function UserCard({user}) {
                             e.target.classList.remove('fa-shake');
                         },1000)
                     }}  
+
+                    onClick={(e) => {
+                        e.target.classList.add('fa-flip');
+                        setTimeout(()=>{
+                            removeUser(id);
+                        },1500)
+                    }}
                 />
                 
             </div>
