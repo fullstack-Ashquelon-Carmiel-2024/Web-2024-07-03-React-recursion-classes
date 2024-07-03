@@ -1,10 +1,12 @@
 import './AddUser.scss';
 
-export default function AddUser() {
+export default function AddUser({children}) {
 
     return (
-      <div className="col-12 col-sm-6 col-md-5 border-start border-start-1 border-primary px-5 addUser order-0 order-sm-1">
+      <div className="col-12 col-sm-6 col-md-5 col-lg-5 offset-lg-1 border-start border-start-1 border-primary px-5 addUser order-0 order-sm-1">
           
+        {children}
+
           {/* noValidate - removes original HTML validation, 
               pay attention that here in React it is written noValidate
               and not novalidate as in plain HTML */}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import AddUser from './components/addUser/AddUser';
 import Header from './components/header/Header';
 import UserList from './components/userList/UserList';
 
@@ -20,9 +21,19 @@ function App() {
       ]);
 
   return (
-    <div className="App">
-      <Header title='User List' /> 
-      <UserList users={users} />
+    <div className="App container pb-5">
+      <div className="appTitle">Bulls and Cows</div>
+      <div className="row gx-0 gy-3">
+
+        <UserList users={users}>
+          <Header title='User List' /> 
+        </UserList>
+
+        <AddUser>
+          <Header title='Add User' /> 
+        </AddUser>
+
+      </div>
     </div>
   );
 }

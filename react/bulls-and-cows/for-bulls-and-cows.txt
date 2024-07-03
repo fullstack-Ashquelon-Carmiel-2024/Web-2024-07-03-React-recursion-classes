@@ -17,11 +17,14 @@ let eMailPattern = "^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,4})+$";
 
 npm i 
 
-@fortawesome/react-fontawesome
 @fortawesome/fontawesome-svg-core
+
 @fortawesome/free-brands-svg-icons
 @fortawesome/free-regular-svg-icons
 @fortawesome/free-solid-svg-icons
+
+@fortawesome/react-fontawesome@latest
+
 @fortawesome/fontawesome-free
 
 
