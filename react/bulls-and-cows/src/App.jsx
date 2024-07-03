@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Header from './components/header/Header';
+import UserList from './components/userList/UserList';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Header title='User List' /> 
+      <UserList users={users} />
     </div>
   );
 }

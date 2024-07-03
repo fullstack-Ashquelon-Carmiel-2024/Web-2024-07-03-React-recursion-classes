@@ -12,6 +12,13 @@ creates "map" of <UserCard user={user} /> for each user,
 and if not, shows 
 <p className="display-5">This is a sociopatic game: no users</p>
 */}
+            {users.length > 0 ?
+                users.map(user => 
+                    <UserCard key={user.id} user={user} />):
+                    <p className="display-5">
+                        This is a sociopatic game: no users</p>
+            }
+
         </ul>
     </div>
   )
