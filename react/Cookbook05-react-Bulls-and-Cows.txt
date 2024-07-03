@@ -5,7 +5,13 @@
 2. 
 $ npm i bootstrap sass
 
-3. src/components/header/Header.scss
+3. index.css:
+
+body {
+  background: rgb(118, 143, 189);
+}
+
+4. src/components/header/Header.scss
    src/components/header/Header.jsx:
 
    Use snippet 'rfce' and after that change to
@@ -21,4 +27,67 @@ function Header({title}) {
 }
 
 export default Header
+
+5. Import it into App and see that the classes 
+of Bootstrap work:
+
+import Header from './components/header/Header';
+
+function App() {
+  // MISSION: convert "users" into "state" and make
+  // this array to be their initial value
+
+  const users = [
+    { id: 77, fullName: 'Harleen Frances Quinzel', nick: 'Harley Quinn',
+      email:'harley@gmail.com', phone: '555-5555', gender: 'f',role:'player'},
+    { id: 121, fullName: 'Joakin Phoenix', nick: 'Joker',
+      email:'joker@gmail.com',  gender: 'm',role:'player'},
+    { id: 123, fullName: 'Bruce Wayne', nick: 'Batman',
+      email:'bat@gmail.com', phone: '555-5557',role:'player'},
+    { id: 111, fullName: 'Princess Diana of Thymiscira', nick: 'Wonder Woman',
+        email:'gal.gadot@gmail.com', phone: '555-5558', role:'admin'}
+  ];
+
+  return (
+    <div className="App">
+      <Header title='User List' /> 
+    </div>
+  );
+}
+
+export default App;
+
+6. import { useState } from 'react';
+
+import Header from './components/header/Header';
+
+
+function App() {
+  // MISSION: convert "users" into "state" and make
+  // this array to be their initial value
+  const [users,setUsers] = useState(
+      [
+        { id: 77, fullName: 'Harleen Frances Quinzel', nick: 'Harley Quinn',
+          email:'harley@gmail.com', phone: '555-5555', gender: 'f',role:'player'},
+        { id: 121, fullName: 'Joakin Phoenix', nick: 'Joker',
+          email:'joker@gmail.com',  gender: 'm',role:'player'},
+        { id: 123, fullName: 'Bruce Wayne', nick: 'Batman',
+          email:'bat@gmail.com', phone: '555-5557',role:'player'},
+        { id: 111, fullName: 'Princess Diana of Thymiscira', nick: 'Wonder Woman',
+            email:'gal.gadot@gmail.com', phone: '555-5558', role:'admin'}
+      ]);
+
+  return (
+    <div className="App">
+      <Header title='User List' /> 
+    </div>
+  );
+}
+
+export default App;
+
+7. Create src/components/userList/UserList.scss
+7. Create src/components/userList/UserList.jsx:
+
+   (use snippet 'rfc')
 
