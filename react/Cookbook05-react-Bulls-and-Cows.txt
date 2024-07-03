@@ -5,3 +5,20 @@
 2. 
 $ npm i bootstrap sass
 
+3. src/components/header/Header.scss
+   src/components/header/Header.jsx:
+
+   Use snippet 'rfce' and after that change to
+
+   import './Header.scss';
+
+function Header({title}) {
+  return (
+    <h1 className="display-1 text-primary text-center">
+        {title}
+    </h1>
+  )
+}
+
+export default Header
+
