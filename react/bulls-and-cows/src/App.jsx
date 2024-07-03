@@ -20,6 +20,8 @@ function App() {
             email:'gal.gadot@gmail.com', phone: '555-5558', role:'admin'}
       ]);
 
+  // MISSION: create function removeUser(id)
+
   return (
     <div className="App container pb-5">
       <div className="appTitle">Bulls and Cows</div>

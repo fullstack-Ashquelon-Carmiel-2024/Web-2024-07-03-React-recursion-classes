@@ -512,8 +512,101 @@ npm i
 
 @fortawesome/fontawesome-free
 
-20.
+20. Sο, the best 3 methods of using Font Awesome now:
 
+    a) If we need just a few icons here and there once in a progam
+       
+       Import into the specific component the object of FontAwesomeIcon:
+       import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
+       In the same component import the specific icon objects, like:
+
+       import { faCoffee, faTrashCan as faSolidTrashCan } 
+                 from '@fortawesome/free-solid-svg-icons';
+      import { faReact } from '@fortawesome/free-brands-svg-icons';
+
+     And now we use it:
+
+        <FontAwesomeIcon icon={faTrashCan} 
+                  className="text-danger" role='button' />
+                <FontAwesomeIcon icon={faCoffee} 
+                  className="text-warning" role='button' />
+                <FontAwesomeIcon icon={faSolidTrashCan} 
+                  className="text-info" role='button' />
+
+      b) If we need some icons for the use through the several components
+         in the program. We can create one common file like:
+
+         assets/icons/projectIcons.js:
+
+        import {faTrashCan} from '@fortawesome/free-regular-svg-icons';
+        import {faCow} from '@fortawesome/free-solid-svg-icons';
+
+         import { library} from '@fortawesome/fontawesome-svg-core';
+
+         library.add(faCow,faTrashCan);
+
+         Import the file into index.js:
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './assets/icons/projectIcons';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import App from './App';
+
+         Import into the specific component the object of FontAwesomeIcon:
+       import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
+          And use it with the class names:
+          <FontAwesomeIcon icon="fa-regular fa-trash-can" 
+                  className="text-danger" role='button' />
+
+c) When we need a lot of icons
+
+We can create one common file like:
+
+         assets/icons/projectIcons.js:
+
+          Import one or more icon sets:
+
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { library} from '@fortawesome/fontawesome-svg-core';
+library.add(far,fas,fab)
+
+Import the file into index.js:
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './assets/icons/projectIcons';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import App from './App';
+
+Import into the specific component the object of FontAwesomeIcon:
+       import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
+
+
+And use it with the class names:
+
+<FontAwesomeIcon icon="fa-regular fa-trash-can" 
+                  className="text-danger" role='button' />
+
+21. Move images dir into the "assets" dir and
+perform the change in UserCard:
+
+import './UserCard.scss';
+import femaleImg from '../../assets/images/woman-with-laptop-thinking.png';
+import maleImg from '../../assets/images/guy-orange.PNG';
+import justUserImg from '../../assets/images/user02.png';
+
+
+22. Styling Icons:
+
+https://docs.fontawesome.com/web/style/rotate
 
 
 

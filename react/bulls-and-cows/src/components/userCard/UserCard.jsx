@@ -1,9 +1,14 @@
 import './UserCard.scss';
-import femaleImg from '../../images/woman-with-laptop-thinking.png';
-import maleImg from '../../images/guy-orange.PNG';
-import justUserImg from '../../images/user02.png';
+import femaleImg from '../../assets/images/woman-with-laptop-thinking.png';
+import maleImg from '../../assets/images/guy-orange.PNG';
+import justUserImg from '../../assets/images/user02.png';
+
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
+
 
 export default function UserCard({user}) {
+    
 
   const { fullName, email, role } = user;
 
@@ -18,15 +23,25 @@ export default function UserCard({user}) {
             <div className="col-4">
                 <img src={imgSrc} className="img-fluid rounded-start" alt="" />
             </div>
-            <div className="col-7 card-body">
+            <div className="col-6 card-body">
                 <h5 className="card-title">{fullName}</h5>
                 <p className="card-text">Email: {email}</p>
                 <p className="card-text"><small className="text-muted">
                     Role: {role}
                 </small></p>
             </div>
-            <div className="col-1">
+            <div className="col-2 d-flex justify-content-center align-items-center">
 
+                <FontAwesomeIcon icon="fa-regular fa-trash-can" 
+                  className="text-danger fs-1" role='button'
+                    onMouseEnter={(e) => {
+                        e.target.classList.add('fa-shake');
+                        setTimeout(()=>{
+                            e.target.classList.remove('fa-shake');
+                        },1000)
+                    }}  
+                />
+                
             </div>
 
         </div>
