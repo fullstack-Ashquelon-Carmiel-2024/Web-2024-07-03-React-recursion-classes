@@ -1,0 +1,7 @@
+1. copy some basic react app to "bulls-and-cows"
+   or
+   $ npx create-react-app bulls-and-cows
+
+2. 
+$ npm i bootstrap sass
+
